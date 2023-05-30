@@ -1,3 +1,66 @@
+# Table of contents / Table de matières :
+1. [ Description (English). ](#en)
+    - Repository Organization
+    - Makefile
+    - Part 1 - Householder transformations
+    - Part 2 - Bidiagonal formatting
+    - Part 3 - QR and SVD transformations
+    - Part 4 - Applying SVD to image compression
+2. [ Description (Français). ](#fr)
+    - Organisation du dépôt
+    - Makefile
+    - Partie 1 - Transformations de Householder
+    - Partie 2 - Mise sous forme bidiagonale
+    - Partie 3 - Transformations QR et SVD
+    - Partie 4 - Application de la SVD à la compression d'image
+
+
+<a name="en"></a>
+# Description [English]
+
+The aim of this project is to program an algorithm for image compression using matrix techniques based on SVD factorization. This type of algorithm is related to lossy compression algorithms, the best known of which is certainly the JPEG compression algorithm, itself usually based on the Discrete Cosine Transform (DCT), a transformation similar to the discrete Fourier transform.
+
+## Repository organization
+
+The project code is located in the **src** directory. For each part, there is a corresponding code named after its part number.
+For example, the code for part 1 can be found in the file `part1.py`.
+It also contains the various test files corresponding to the different parts.
+For example, the tests for part 1 are in the `test1.py` file. 
+
+In the **sections** directory, you can find the various latex files corresponding to the different parts included in the `report.tex` file.
+
+## Makefile
+The **Makefile** has several targets, and by executing the `make test` command, you can run tests on all the parts. 
+The `make` command generates the report, and to obtain details on the compilation of the report, run the `make verbose` command.
+
+## Part 1 - Householder transformations
+By running `src/part1.py`, we can compare the execution time of our functions with that of conventional matrix products.
+
+The `src/test1.py` file verifies that these functions give results close to those expected, with an adjustable `eps` deviation.
+
+## Part 2 - Bidiagonal formatting
+The `src/part2.py` file contains functions only, and acts as a module in relation to the following parts.
+
+For testing purposes, in the `src/test2.py` file, we test our bidiagonalization function on various matrices, checking that the result is indeed a bidiagonal matrix, and that the product of the returned matrices is close to the starting matrix, with a `eps` deviation that we can modify.
+
+## Part 3 - QR and SVD transformations
+Running `src/part3.py` generates a figure showing the convergence speed of the matrix diagonalization method starting from a bidiagonal matrix.
+
+Running `src/test3.py`, we perform checks on this diagonalization method, as well as our QR decomposition and SVD function. In each case, we check that the matrices returned have the expected characteristics (orthogonal matrix, upper triangular, diagonal, etc.).
+
+## Part 4 - Applying SVD to image compression
+This part uses the `res/part-4.png` file, which we consider to be the _original_ image. Running this file first generates two examples of image compression using the SVD method, in comparison with the original image.
+Next, a figure shows the distances to the original image, on a logarithmic scale.
+Finally, the last figure shows the file size in number of values, relative to the compression rank.
+
+As far as tests are concerned, the `src/test-4.py` file verifies that the post-compression images are indeed close to the compressed images supplied.
+
+
+<a name="fr"></a>
+# Description [Français]
+
+Le but de ce projet consiste à programmer un algorithme permettant de faire de la compression d’images en utilisant des techniques matricielles basée sur la factorisation SVD. Ce type d’algorithme est à relier aux algorithmes de compression avec pertes, dont le plus connu est certainement l’algorithme de compression JPEG, lui-même basé usuellement sur la Discrete Cosine Transform (DCT), une transformation voisine de la transformée de Fourier discrète.
+
 ## Organisation du dépôt
 
 Le code du projet se trouve dans le répertoire **src**. Pour chaque partie, il y a un code correspondant nommé au numéro de sa partie.
