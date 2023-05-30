@@ -1,5 +1,3 @@
-# Dépôt Git IS104 (Projet n°3)
-
 ## Organisation du dépôt
 
 Le code du projet se trouve dans le répertoire **src**. Pour chaque partie, il y a un code correspondant nommé au numéro de sa partie.
